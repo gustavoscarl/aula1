@@ -1,2 +1,25 @@
 <button (click)="visibilidadeTexto()">Clique aqui</button>
 <p *ngIf="exibirTexto">Aprendendo a trabalhar com Angular</p>
+
+<!-- TEMPLATE -->
+<ng-template [ngIf]="exibirTexto">
+  <p>Texto dentro do template...</p>
+</ng-template>
+
+<ol *ngFor="let nome of nomes">
+  <li>{{nome}}</li>
+</ol>
+
+
+<select [(ngModel)]="linguagem">
+  <option value="">Selecionar alguma linguagem</option>
+  <option value="C#">C#</option>
+  <option value="Java">Java</option>
+  <option value="Python">Python</option>
+</select>
+<ul [ngSwitch]="linguagem">
+  <li *ngSwitchCase="'C#'">C# é uma linguagem</li>
+  <li *ngSwitchCase="'Java'">Java é uma linguagem</li>
+  <li *ngSwitchCase="'Python'">Python é uma linguagem</li>
+  <li *ngSwitchCase="''">Informe uma linguagem</li>
+</ul>
